@@ -31,29 +31,33 @@ const Home = ({ query }) => {
     return (
         <div className="home-container">
             <div className="select-container">
-                <select
-                    type="radio"
-                    value={params.color}
-                    onChange={(e) => setParams({ ...params, color: e.target.value })}
-                    className="select"
-                    defaultValue
-                >
-                    <option disabled value>- color -</option>
-                    <option value="black">black</option>
-                    <option value="white">white</option>
-                </select>
-                <select
-                    type="radio"
-                    value={params.orientation}
-                    onChange={(e) => setParams({ ...params, orientation: e.target.value })}
-                    className="select"
-                    defaultValue
-                >
-                    <option disabled value>- orientation -</option>
-                    <option value="landscape">landscape</option>
-                    <option value="portrait">portrait</option>
-                    <option value="squarish">squarish</option>
-                </select>
+                <div className="select-dropdown">
+                    <select
+                        type="radio"
+                        value={params.color}
+                        onChange={(e) => setParams({ ...params, color: e.target.value })}
+                        className="select"
+                        defaultValue
+                        >
+                        <option disabled value>- color -</option>
+                        <option value="black">black</option>
+                        <option value="white">white</option>
+                    </select>
+                </div>
+                <div className="select-dropdown">
+                    <select
+                        type="radio"
+                        value={params.orientation}
+                        onChange={(e) => setParams({ ...params, orientation: e.target.value })}
+                        className="select"
+                        defaultValue
+                    >
+                        <option disabled value>- orientation -</option>
+                        <option value="landscape">landscape</option>
+                        <option value="portrait">portrait</option>
+                        <option value="squarish">squarish</option>
+                    </select>
+                </div>
             </div>
             <InfiniteScroll
                 dataLength={photos.length}

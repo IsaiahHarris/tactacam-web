@@ -1,11 +1,30 @@
 .search-container {
     width: 90%;
+    position: relative;
+    display: flex;
+    margin: 10px;
     .search-input {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        width: 75%;
+        width: 100%;
+        padding: 10px;
+        border: 4px solid #cbcede;
+        border-radius: 10px 0 0 10px;
+        border-right: none;
+        outline: none;
+        font-size: 20px;
+        background: none;
     }
+
     .search-button {
-        width: 25%;
+        text-align: center;
+        height: 51px;
+        width: 40px;
+        outline: none;
+        cursor: pointer;
+        border: 4px solid #cbcede;
+        border-radius: 0 10px 10px 0;
+        border-left: none;
+        background: none;
+        font-size: 20px;
+        border-left: 4px solid #cbcede;
     }
 }
