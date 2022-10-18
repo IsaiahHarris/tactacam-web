@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import './Photo.scss';
+import React, { useState, useEffect } from "react";
+import "./Photo.scss";
 
 const Photo = ({ url }) => {
-    return (
-        <img className="photo" src={url} />
-    )
-}
+  return <img className="photo" src={url} />;
+};
 
-export default Photo
+export default Photo;

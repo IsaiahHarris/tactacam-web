@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './PhotoDetail.scss'
+import React, { useState, useEffect } from "react";
+import "./PhotoDetail.scss";
 const PhotoDetail = () => {
-
-    return (
-        'detail'
-    )
-}
+  return "detail";
+};
 
 export default PhotoDetail;
