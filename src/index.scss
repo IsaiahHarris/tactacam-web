@@ -17,6 +17,7 @@ code {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 6px;
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: center;

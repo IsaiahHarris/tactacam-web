@@ -7,7 +7,7 @@ const Home = ({ query }) => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
   const [params, setParams] = useState({});
-
+  const [error, setError] = useState("");
   useEffect(() => {
     getPhotos(1, true);
   }, [query, params.color, params.orientation]);
@@ -22,6 +22,9 @@ const Home = ({ query }) => {
       }${colorParam}${orientationParam}&client_id=bPfgiIw4vW72MUt72sWrzfIR4KSMdhe3J0brvyZqoCs`
     )
       .then((response) => {
+        if (response.status === 403) {
+          setError("Too many requests");
+        }
         return response.json();
       })
       .then((data) => {
@@ -82,6 +85,7 @@ const Home = ({ query }) => {
           return <Photo key={photo.id} url={photo.urls.thumb} />;
         })}
       </InfiniteScroll>
+      {error}
     </div>
   );
 };
