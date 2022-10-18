@@ -6,6 +6,7 @@
     align-items: center;
     .select-container {
         width: 90%;
+        max-width: 1024px;
         display: flex;
         .select-dropdown,
         .select-dropdown * {

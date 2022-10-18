@@ -73,7 +73,6 @@ const Home = ({ query }) => {
       <InfiniteScroll
         dataLength={photos.length}
         next={() => {
-          console.log("get next");
           getPhotos(page + 1, false);
           setPage((page) => page + 1);
         }}
