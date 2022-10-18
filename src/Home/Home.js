@@ -10,13 +10,12 @@ const Home = ({ query }) => {
 
     useEffect(() => {
         getPhotos(1, true);
-        console.log('query', query)
     }, [query, params.color, params.orientation])
 
     const getPhotos = (page, newSearch) => {
         const colorParam = params.color ? `&color=${params.color}` : ''
         const orientationParam = params.orientation ? `&orientation=${params.orientation}` : ''
-        fetch(`https://api.unsplash.com/search/photos?page=${page}&query=${query}${colorParam}${orientationParam}&client_id=DwNmIS2gLAqsacMm7jmfQdLqgLQEy3tTOBy_wu0gBUI`)
+        fetch(`https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${query}${colorParam}${orientationParam}&client_id=DwNmIS2gLAqsacMm7jmfQdLqgLQEy3tTOBy_wu0gBUI`)
             .then(response => {
                 return response.json();
             })
@@ -30,15 +29,16 @@ const Home = ({ query }) => {
     }
 
     return (
-        <div className="photos-container">
+        <div className="home-container">
             <div className="select-container">
                 <select
                     type="radio"
                     value={params.color}
                     onChange={(e) => setParams({ ...params, color: e.target.value })}
                     className="select"
+                    defaultValue
                 >
-                    <option disabled selected value>- color -</option>
+                    <option disabled value>- color -</option>
                     <option value="black">black</option>
                     <option value="white">white</option>
                 </select>
@@ -47,8 +47,9 @@ const Home = ({ query }) => {
                     value={params.orientation}
                     onChange={(e) => setParams({ ...params, orientation: e.target.value })}
                     className="select"
+                    defaultValue
                 >
-                    <option disabled selected value>- orientation -</option>
+                    <option disabled value>- orientation -</option>
                     <option value="landscape">landscape</option>
                     <option value="portrait">portrait</option>
                     <option value="squarish">squarish</option>

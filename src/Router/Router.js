@@ -7,7 +7,7 @@ import Search from '../Search/Search';
 
 const Router = () => {
     const [searchValue, setSearchValue] = useState('');
-    const [currentQuery, setCurrentQuery] = useState('');
+    const [currentQuery, setCurrentQuery] = useState('random');
     return (
         <div className="router-container">
             <Search searchValue={searchValue} setSearchValue={setSearchValue} triggerSearch={setCurrentQuery} />
