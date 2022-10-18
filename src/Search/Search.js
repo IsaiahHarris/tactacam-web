@@ -13,10 +13,6 @@ const Search = ({ setSearchValue, searchValue, triggerSearch }) => {
       className="search-container"
       style={{
         top: scrollDirection === "down" ? -300 : 0,
-        position: "sticky",
-        transitionDuration: "250ms",
-        transitionProperty: "all",
-        zIndex: 2,
       }}
     >
       <input

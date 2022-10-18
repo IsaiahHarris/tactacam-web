@@ -8,6 +8,7 @@
         width: 90%;
         max-width: 1024px;
         display: flex;
+        font-weight: bold;
         .select-dropdown,
         .select-dropdown * {
             margin: 0;
@@ -15,9 +16,11 @@
             position: relative;
             box-sizing: border-box;
             margin-right: 20px;
-            width: 116px;
+            width: 150px;
+            background-color: #93d50b;
+            border: 3px solid black;
             select {
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: normal;
                 max-width: 100%;
                 padding: 8px 24px 8px 10px;
@@ -38,7 +41,7 @@
 
 .select-dropdown {
 	position: relative;
-	background-color: #E6E6E6;
+	background-color: black;
 	border-radius: 4px;
 }
 .select-dropdown 
@@ -54,7 +57,8 @@
 	width: 0;
 	height: 0;
 	margin-top: -2px;
-	border-top: 5px solid #aaa;
+	border-top: 5px solid black;
 	border-right: 5px solid transparent;
 	border-left: 5px solid transparent;
+    color: black;
 }

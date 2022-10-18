@@ -48,7 +48,7 @@ const Home = ({ query }) => {
             defaultValue
           >
             <option disabled value>
-              - color -
+              - Color -
             </option>
             <option value="black">black</option>
             <option value="white">white</option>
@@ -65,7 +65,7 @@ const Home = ({ query }) => {
             defaultValue
           >
             <option disabled value>
-              - orientation -
+              - Orientation -
             </option>
             <option value="landscape">landscape</option>
             <option value="portrait">portrait</option>
