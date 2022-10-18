@@ -2,7 +2,7 @@ import "./Home.scss";
 import React, { useState, useEffect } from "react";
 import Photo from "../Photo/Photo";
 import InfiniteScroll from "react-infinite-scroll-component";
-
+const CLIENT_ID = "bPfgiIw4vW72MUt72sWrzfIR4KSMdhe3J0brvyZqoCs";
 const Home = ({ query }) => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
@@ -19,7 +19,7 @@ const Home = ({ query }) => {
     fetch(
       `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${
         query || "random"
-      }${colorParam}${orientationParam}&client_id=bPfgiIw4vW72MUt72sWrzfIR4KSMdhe3J0brvyZqoCs`
+      }${colorParam}${orientationParam}&client_id=${CLIENT_ID}`
     )
       .then((response) => {
         if (response.status === 403) {
