@@ -12,4 +12,4 @@ Listed below are the requirements for our React coding assignment. We anticipate
 
 • Code should be provided via a Git repository pushed to your Git provider of choice (if  repo is private, it should be shared with the interviewer). Alternatively, email a .zip of  the Git repo to the interviewer. 
 
-NOTE: You can register for free demo Unsplash API access via https://unsplash.com/join.  Alternatively you can use our demo key, HTTP Authorization header with a value of Client-ID  bPfgiIw4vW72MUt72sWrzfIR4KSMdhe3J0brvyZqoCs to make your requests. Demo requests  are rate limited to 50 requests per hour, so feel free to hardcode the response data in the code  sample you provide (whatever is easiest for you).
+NOTE: You can register for free demo Unsplash API access via https://unsplash.com/join.  Alternatively you can use our demo key, HTTP Authorization header with a value of Client-ID  DwNmIS2gLAqsacMm7jmfQdLqgLQEy3tTOBy_wu0gBUI to make your requests. Demo requests  are rate limited to 50 requests per hour, so feel free to hardcode the response data in the code  sample you provide (whatever is easiest for you).

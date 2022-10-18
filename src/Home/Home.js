@@ -13,9 +13,9 @@ const Home = ({ query }) => {
     }, [query, params.color, params.orientation])
 
     const getPhotos = (page, newSearch) => {
-        const colorParam = params.color ? `&color=${params.color}` : ''
-        const orientationParam = params.orientation ? `&orientation=${params.orientation}` : ''
-        fetch(`https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${query}${colorParam}${orientationParam}&client_id=DwNmIS2gLAqsacMm7jmfQdLqgLQEy3tTOBy_wu0gBUI`)
+        const colorParam = params.color && query ? `&color=${params.color}` : ''
+        const orientationParam = params.orientation && query ? `&orientation=${params.orientation}` : ''
+        fetch(`https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${query || "random"}${colorParam}${orientationParam}&client_id=bPfgiIw4vW72MUt72sWrzfIR4KSMdhe3J0brvyZqoCs`)
             .then(response => {
                 return response.json();
             })
