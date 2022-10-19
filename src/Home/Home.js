@@ -23,7 +23,9 @@ const Home = ({ query, clickPhoto }) => {
     )
       .then((response) => {
         if (response.status === 403) {
-          setError("Too many requests");
+          setError(
+            "Too many requests, developer mode only allows for 50 requests per hour"
+          );
         }
         return response.json();
       })
@@ -72,6 +74,7 @@ const Home = ({ query, clickPhoto }) => {
           </select>
         </div>
       </div>
+      {error && <div className="error">{error}</div>}
       <InfiniteScroll
         dataLength={photos.length}
         next={() => {
@@ -92,7 +95,7 @@ const Home = ({ query, clickPhoto }) => {
           );
         })}
       </InfiniteScroll>
-      {error}
+      {error && <div className="error">{error}</div>}
     </div>
   );
 };

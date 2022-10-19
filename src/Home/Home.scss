@@ -4,6 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .error {
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 10px;
+    }
     .select-container {
         width: 90%;
         max-width: 1024px;
