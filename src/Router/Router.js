@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./Router.scss";
 import PhotoDetail from "../PhotoDetail/PhotoDetail";
