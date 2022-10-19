@@ -17,9 +17,7 @@ const Home = ({ query, clickPhoto }) => {
     const orientationParam =
       params.orientation && query ? `&orientation=${params.orientation}` : "";
     fetch(
-      `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${
-        query || "random"
-      }${colorParam}${orientationParam}&client_id=${CLIENT_ID}`
+      `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${query}${colorParam}${orientationParam}&client_id=${CLIENT_ID}`
     )
       .then((response) => {
         if (response.status === 403) {
@@ -52,8 +50,17 @@ const Home = ({ query, clickPhoto }) => {
             <option disabled value>
               - Color -
             </option>
-            <option value="black">black</option>
             <option value="white">white</option>
+            <option value="black">black</option>
+            <option value="black_and_white">B&W</option>
+            <option value="yellow">yellow</option>
+            <option value="orange">orange</option>
+            <option value="red">red</option>
+            <option value="purple">purple</option>
+            <option value="magenta">magenta</option>
+            <option value="green">green</option>
+            <option value="teal">teal</option>
+            <option value="blue">blue</option>
           </select>
         </div>
         <div className="select-dropdown">
