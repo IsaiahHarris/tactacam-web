@@ -1,7 +1,10 @@
-.photo {
+.photo-container {
     width: 90%;
     margin: 10px;
     @media (min-width: 768px) {
         width: 250px;
+    }
+    .photo {
+        width: 100%;
     }
 }

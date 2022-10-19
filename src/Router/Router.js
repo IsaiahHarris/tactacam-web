@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./Router.scss";
 import PhotoDetail from "../PhotoDetail/PhotoDetail";
 import Home from "../Home/Home";
@@ -8,16 +8,29 @@ import Search from "../Search/Search";
 const Router = () => {
   const [searchValue, setSearchValue] = useState("");
   const [currentQuery, setCurrentQuery] = useState("");
+  const [currentPhotoClicked, setCurrentPhotoClicked] = useState({});
+  const location = useLocation();
+
   return (
     <div className="router-container">
-      <Search
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        triggerSearch={setCurrentQuery}
-      />
+      {location.pathname === "/" && (
+        <Search
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          triggerSearch={setCurrentQuery}
+        />
+      )}
       <Routes>
-        <Route exact path="/" element={<Home query={currentQuery} />}></Route>
-        <Route exact path="/photo:id" element={<PhotoDetail />}></Route>
+        <Route
+          path="/"
+          element={
+            <Home query={currentQuery} clickPhoto={setCurrentPhotoClicked} />
+          }
+        ></Route>
+        <Route
+          path="/photo/:id"
+          element={<PhotoDetail photo={currentPhotoClicked} />}
+        ></Route>
       </Routes>
     </div>
   );

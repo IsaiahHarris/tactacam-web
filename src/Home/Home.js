@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Photo from "../Photo/Photo";
 import InfiniteScroll from "react-infinite-scroll-component";
 const CLIENT_ID = "bPfgiIw4vW72MUt72sWrzfIR4KSMdhe3J0brvyZqoCs";
-const Home = ({ query }) => {
+const Home = ({ query, clickPhoto }) => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
   const [params, setParams] = useState({});
@@ -82,7 +82,15 @@ const Home = ({ query }) => {
         hasMore
       >
         {photos.map((photo) => {
-          return <Photo key={photo.id} url={photo.urls.thumb} />;
+          return (
+            <Photo
+              clickPhoto={clickPhoto}
+              key={photo.id}
+              id={photo.id}
+              photo={photo}
+              url={photo.urls.thumb}
+            />
+          );
         })}
       </InfiniteScroll>
       {error}
