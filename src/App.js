@@ -1,6 +1,6 @@
 import "./App.scss";
 import Router from "./Router/Router";
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as RouterWrap } from "react-router-dom";
 
 const App = () => {
