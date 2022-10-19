@@ -69,7 +69,6 @@ const Home = ({ query, clickPhoto }) => {
             </option>
             <option value="landscape">landscape</option>
             <option value="portrait">portrait</option>
-            <option value="squarish">squarish</option>
           </select>
         </div>
       </div>
