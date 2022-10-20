@@ -6,25 +6,21 @@ import Home from "../Home/Home";
 import Search from "../Search/Search";
 
 const Router = () => {
-  const [searchValue, setSearchValue] = useState("");
   const [currentQuery, setCurrentQuery] = useState("random");
   const [currentPhotoClicked, setCurrentPhotoClicked] = useState({});
   const location = useLocation();
 
   return (
     <div className="router-container">
-      {location.pathname === "/" && (
-        <Search
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-          triggerSearch={setCurrentQuery}
-        />
-      )}
+      {location.pathname === "/" && <Search triggerSearch={setCurrentQuery} />}
       <Routes>
         <Route
           path="/"
           element={
-            <Home query={currentQuery} clickPhoto={setCurrentPhotoClicked} />
+            <Home
+              query={currentQuery || "random"}
+              clickPhoto={setCurrentPhotoClicked}
+            />
           }
         ></Route>
         <Route

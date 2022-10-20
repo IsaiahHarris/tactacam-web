@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Search.scss";
 
-const Search = ({ setSearchValue, searchValue, triggerSearch }) => {
+const Search = ({ triggerSearch }) => {
   const inputRef = useRef(null);
   const scrollDirection = useScrollDirection();
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     inputRef.current.focus();
