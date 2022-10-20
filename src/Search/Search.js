@@ -39,9 +39,9 @@ const Search = ({ setSearchValue, searchValue, triggerSearch }) => {
 export default Search;
 
 function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = React.useState(null);
+  const [scrollDirection, setScrollDirection] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
     const updateScrollDirection = () => {
