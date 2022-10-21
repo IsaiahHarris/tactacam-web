@@ -17,7 +17,7 @@ const Home = ({ query, clickPhoto }) => {
     const orientationParam =
       params.orientation && query ? `&orientation=${params.orientation}` : "";
     fetch(
-      `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${query}${colorParam}${orientationParam}&client_id=${CLIENT_ID}`
+      `https://api.unsplash.com/search/photos?page=${page}&per_page=30&query=${query}${colorParam}${orientationParam}&client_id=${CLIENT_ID}`
     )
       .then((response) => {
         if (response.status === 403) {
